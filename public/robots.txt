@@ -1,0 +1,4 @@
+# https://www.robotstxt.org/robotstxt.html
+# 这是针对搜索引擎的文件，用来告知限制
+User-agent: *
+Disallow: /
