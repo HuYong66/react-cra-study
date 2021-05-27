@@ -1,8 +1,11 @@
 import React, { useEffect } from 'react'
+// import {
+//   BrowserRouter as Router, Route, Link, Switch,
+// } from 'react-router-dom'
+import { Button } from 'antd'
 import {
   BrowserRouter as Router, Route, Link, Switch,
-} from 'react-router-dom'
-import { Button } from 'antd'
+} from './router/k-react-router-dom'
 import { connect } from './pages/ReactReduxPage/k-react-redux'
 // import { connect } from 'react-redux'
 import logo from './logo.svg'

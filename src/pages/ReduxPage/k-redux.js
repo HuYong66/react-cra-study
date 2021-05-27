@@ -9,7 +9,7 @@ export const createStore = (reducer, initialState, enhancer) => {
   const subscribe = (callback) => {
     callbacks.push(callback)
     return () => {
-      console.log('解除监听')
+      // console.log('解除subsribe监听')
       const index = callbacks.findIndex((item) => item === callback)
       callbacks.splice(index, 1)
     }

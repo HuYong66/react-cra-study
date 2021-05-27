@@ -24,12 +24,16 @@ module.exports = {
     'no-console': 0, // 允许console
     'react/static-property-placement': 0, // 允许static
     'max-len': [2, { code: 150 }], // 设置大长度150
-    'max-classes-per-file': [1, 3], // 单个文件最大class
+    'max-classes-per-file': [1, 5], // 单个文件最大class
     'react/destructuring-assignment': 0, // 不强制解构
     'react/state-in-constructor': 0, // 不强制state位于constructor
     'react/no-array-index-key': 0, // 允许index作为key
     'import/no-unresolved': 0, // 消除不识别根目录
     'import/no-cycle': 0, // 允许../../
+    'no-plusplus': 0, // 允许x++
+    'no-param-reassign': 0, // 允许修改入参
+    'no-shadow': 0,
+    'no-nested-ternary': 0,
     semi: [2, 'never'], // 不要分号
   },
 }

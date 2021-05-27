@@ -46,7 +46,7 @@ class LoginPage extends PureComponent {
   render() {
     const { loading } = this.state
     const { userInfo = {} } = this.props
-    console.log('login-render-userInfo', userInfo)
+    // console.log('login-render-userInfo', userInfo)
 
     if (userInfo.id) {
       return (
