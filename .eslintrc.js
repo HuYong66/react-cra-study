@@ -24,7 +24,7 @@ module.exports = {
     'no-console': 0, // 允许console
     'react/static-property-placement': 0, // 允许static
     'max-len': [2, { code: 150 }], // 设置大长度150
-    'max-classes-per-file': [1, 5], // 单个文件最大class
+    'max-classes-per-file': [1, 7], // 单个文件最大class
     'react/destructuring-assignment': 0, // 不强制解构
     'react/state-in-constructor': 0, // 不强制state位于constructor
     'react/no-array-index-key': 0, // 允许index作为key
@@ -34,6 +34,7 @@ module.exports = {
     'no-param-reassign': 0, // 允许修改入参
     'no-shadow': 0,
     'no-nested-ternary': 0,
+    'no-use-before-define': 0,
     semi: [2, 'never'], // 不要分号
   },
 }

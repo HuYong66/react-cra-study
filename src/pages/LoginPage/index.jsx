@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react'
 import { Button, message } from 'antd'
-import { Redirect } from 'react-router-dom'
+// import { Redirect } from 'react-router-dom'
+import { Redirect } from '@/router/k-react-router-dom'
 // import { connect } from 'react-redux'
 import { connect } from '../ReactReduxPage/k-react-redux'
 
@@ -46,7 +47,7 @@ class LoginPage extends PureComponent {
   render() {
     const { loading } = this.state
     const { userInfo = {} } = this.props
-    // console.log('login-render-userInfo', userInfo)
+    console.log('login-render-userInfo', userInfo)
 
     if (userInfo.id) {
       return (

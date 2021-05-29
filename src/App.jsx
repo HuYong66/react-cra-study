@@ -52,6 +52,8 @@ function App({ userInfo = {} }) {
         </a>
         <section>
           <Router>
+            <Link to="/test">test</Link>
+            /
             <Link to="/login">login</Link>
             /
             <Link to="/home">home</Link>
@@ -64,6 +66,9 @@ function App({ userInfo = {} }) {
             /
             <Link to="/react-redux">react-redux</Link>
             <Switch>
+              <Route path="/test" component={Test} />
+              <Route path="/test2">{() => <h3>test2</h3>}</Route>
+
               {dynamicUserRouters
                 && dynamicUserRouters.filter((item) => userInfo.pageRouter && userInfo.pageRouter.includes(item.path))
                   .map((item, index) => (
@@ -82,6 +87,28 @@ function App({ userInfo = {} }) {
           </Router>
         </section>
       </header>
+    </div>
+  )
+}
+
+function TestChild(props) {
+  console.log('test2-render', props)
+
+  return (
+    <div>
+      TestChild
+      {props.match.params.id}
+    </div>
+  )
+}
+
+function Test(props) {
+  console.log('test-render', props)
+  return (
+    <div>
+      Test
+      <Link to="/test/1314/child">test嵌套子路由</Link>
+      <Route path="/test/:id/child" component={TestChild} />
     </div>
   )
 }
