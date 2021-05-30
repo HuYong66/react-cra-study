@@ -1,7 +1,8 @@
 // import { createStore } from 'redux'
 import thunk from 'redux-thunk'
 import createSagaMiddleWare from 'redux-saga'
-import loginSaga from './loginSaga'
+// import loginSaga from './loginSaga'
+import { rootSaga } from './loginSaga'
 import { createStore, combineReducers, applyMiddleware } from '../pages/ReduxPage/k-redux'
 import counterReducer from './countReducer'
 import userInfoReducer from './userInfoReducer'
@@ -19,7 +20,9 @@ const store = createStore(
 )
 
 // 运行saga
-sagaMiddleware.run(loginSaga)
+// sagaMiddleware.run(loginSaga)
+// 多个saga
+sagaMiddleware.run(rootSaga)
 
 // const store = createStore(counterReducer)
 export default store

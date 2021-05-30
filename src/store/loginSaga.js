@@ -1,5 +1,5 @@
 import {
-  call, put, takeEvery,
+  call, put, takeEvery, all,
 } from 'redux-saga/effects'
 
 function getUser(params) {
@@ -40,6 +40,11 @@ function* loginSaga() {
   // 等同于
   //  const action = yield take("loginSaga");
   //  yield fork(loginHandle, action);
+}
+
+// 多个saga组合
+export function* rootSaga() {
+  yield all([loginSaga()])
 }
 
 export default loginSaga
