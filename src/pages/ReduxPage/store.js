@@ -7,9 +7,9 @@ function myLogger(middleApi) {
   const { getState } = middleApi
   // 接收dispatch，返回新的函数，里面实现中间件功能，再调用原来的dispatch
   // 初始化的dispatch没打印state是因为初始化在createStore调用的是原生的dispatch
-  console.log('初始化logger', getState())
+  // console.log('初始化mylogger', getState())
   return (dispatch) => (action) => {
-    console.log('logger state', getState())
+    console.log('mylogger state', getState())
     dispatch(action)
   }
 }

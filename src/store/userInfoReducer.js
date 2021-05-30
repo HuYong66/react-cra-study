@@ -1,4 +1,5 @@
 const UserInfoReducer = (state = {}, action) => {
+  console.log('action-rducer', action)
   switch (action.type) {
     case 'login':
       return action.userInfo

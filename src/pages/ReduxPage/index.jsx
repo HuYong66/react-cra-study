@@ -23,10 +23,14 @@ export class ReduxPage extends PureComponent {
   }
 
   add = () => {
-    store.dispatch((dispatch) => {
-      setTimeout(() => {
-        dispatch({ type: 'add', num: 2 })
-      }, 2000)
+    store.dispatch(async (dispatch) => {
+      await new Promise((resolve) => {
+        setTimeout(() => {
+          console.log('延时两秒')
+          resolve()
+        }, 2000)
+      })
+      dispatch({ type: 'add', num: 2 })
     })
   }
 
@@ -36,7 +40,7 @@ export class ReduxPage extends PureComponent {
       <div>
         redux
         <Button onClick={() => store.dispatch({ type: 'add', num: 2 })}>add</Button>
-        <Button onClick={this.add}>异步add</Button>
+        <Button onClick={this.add}>redux-thunk异步add</Button>
         <Button onClick={this.clear}>解除监听</Button>
         {' '}
         <br />
