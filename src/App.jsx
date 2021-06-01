@@ -16,7 +16,7 @@ import { constantRouters, dynamicUserRouters } from './router'
 function App({ userInfo = {} }) {
   // 无法获取到history, 路由底下的函数组件可以
   // ！！问题解决思路，拿不到history是因为不在router下，拿不到context，考虑使用嵌套路由再套一层
-  // <Router><Route componet={现在APP里的内容}></Router> 这样就能拿到history，然后存放在window全局对象里使用了
+  // <Router><xxx>现在APP里的内容</xxx></Router> 这样就能通过useHistory拿到history，然后存放在window全局对象里使用了
   // const history = useHistory()
 
   const [num, setNum] = useState(0)
@@ -71,7 +71,7 @@ function App({ userInfo = {} }) {
             /
             <Link to="/react-redux">react-redux</Link>
 
-            {/* 可以通过比对path获取当前路由信息，如制作面包屑之类 */}
+            {/* 可以通过比对path获取当前路由信息(不用route直接写组件也能拿到，因为在Router里，通过use系列)，如制作面包屑之类 */}
             <Route component={() => <h3>LAYOUT-TOP</h3>} />
             <Switch>
               <Route path="/test" component={Test} />
@@ -92,7 +92,7 @@ function App({ userInfo = {} }) {
               ))}
               <Route component={Empty} />
             </Switch>
-            {/* 可以通过获取到history，实现底部模块页跳转，直接使用link也行 */}
+            {/* 可以通过获取到history(不用route直接写组件也能拿到，因为在Router里，通过use系列)，实现底部模块页跳转，直接使用link也行 */}
             <Route component={() => <h3>LAYOUT-BOTTOM</h3>} />
           </Router>
         </section>

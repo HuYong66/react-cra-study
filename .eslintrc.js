@@ -35,6 +35,7 @@ module.exports = {
     'no-shadow': 0,
     'no-nested-ternary': 0,
     'no-use-before-define': 0,
+    'no-unused-expressions': 0,
     semi: [2, 'never'], // 不要分号
   },
 }
