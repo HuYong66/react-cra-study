@@ -53,6 +53,7 @@ export const connect = (mapStateToProps, mapDispatchToProps) => (WrappedComponen
       return <WrappedComponent {...restProps} {...extraProps} />
     }
   }
+  // 这里并没有违反高阶组件不要在render里使用这条规则，因为这里只会执行一次
   return Consumer(Content)
 }
 

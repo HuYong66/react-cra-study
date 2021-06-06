@@ -1,4 +1,5 @@
 // 此为react16版本，17版本不会自动调用这了
+// react 17版本使用 react/jsx-runtime 里的 jsx 方法
 function createElement(type, props, ...children) {
   console.log('react-createElement', type, props, children)
   return {
