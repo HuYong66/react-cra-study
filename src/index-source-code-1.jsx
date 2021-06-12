@@ -1,33 +1,18 @@
-import React from 'react'
+import React from './react-source-code-2/k-react'
 import { Component as PureComponent } from './react-source-code-2/k-react-component'
-import ReactDOM, { useState } from './react-source-code-2/k-react-dom'
+import ReactDOM from './react-source-code-2/k-react-dom'
 import './index.css'
 
-export function TestFunc({ name }) {
-  const [count, setCount] = useState(1)
-  const obj = count % 2 ? { className: 'red' } : { onClick: () => console.log('000') }
-  // console.log('function-render', count, name)
+function TestFunc({ name }) {
   return (
     <div className="border">
-      这里是函数组件,
-      {count}
-      <div {...obj}>00000</div>
-      <div>
-        {
-        count % 2 ? '奇数' : '偶数'
-      }
-        <br />
-        {
-        count % 2 ? <h4>奇数</h4> : <p>偶数</p>
-      }
-      </div>
+      这里是函数组件1
       {name}
-      <button type="button" onClick={() => setCount((pre) => pre + 1)}>add</button>
     </div>
   )
 }
 
-export class TestClass extends PureComponent {
+class TestClass extends PureComponent {
   render() {
     return (
       <div>
